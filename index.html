@@ -13,7 +13,9 @@
     ul.entry-list { list-style: none; padding-left: 1em; }
     ul.entry-list li { margin-bottom: 0.5em; }
     .entry-meta { font-size: 0.9em; color: #666; }
-  </style>
+  
+    .entry-summary { font-size: 0.95em; color: #333; margin-top: 0.3em; }
+    </style>
 </head>
 <body>
   <h1>ようこそ「空計画の墓」へ</h1>
@@ -54,6 +56,11 @@
             const meta = document.createElement("div");
             meta.className = "entry-meta";
             meta.textContent = `${entry.timestamp} ｜ ${entry.tags.join(", ")}`;
+
+            const summary = document.createElement("div");
+            summary.className = "entry-summary";
+            summary.textContent = entry.summary || "";
+            item.appendChild(summary);
 
             item.appendChild(link);
             item.appendChild(meta);
