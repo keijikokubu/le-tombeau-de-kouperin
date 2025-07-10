@@ -11,20 +11,21 @@
     <h1>空計画の墓</h1>
     <p>Le Tombeau de Kouperin</p>
     <div class="year-navigation">
+      <span class="year-nav">&lt; 2024</span>
       <span class="current-year">2025</span>
+      <span class="year-nav">2026 &gt;</span>
     </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="メニューを開く">&#9776;</button>
   </header>
 
-  <div class="container">
-  <div class="search-controls">
+  <!-- メニュー（最初は非表示） -->
+  <div id="searchMenu" class="search-menu hidden">
     <input type="text" id="searchInput" placeholder="キーワード検索…" />
     <div id="tagFilter" class="tag-filter"></div>
-    <select id="sortOrder">
-      <option value="desc">新しい順</option>
-      <option value="asc">古い順</option>
-    </select>
+    <div class="menu-section">📘 Kindleリンク（準備中）</div>
   </div>
 
+  <div class="container">
     <div id="timeline" class="timeline">
       <!-- JSで生成 -->
     </div>

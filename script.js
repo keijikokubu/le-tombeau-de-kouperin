@@ -1,17 +1,19 @@
-
 fetch("index.json")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("timeline");
     const searchInput = document.getElementById("searchInput");
     const tagFilter = document.getElementById("tagFilter");
-    const sortOrderSelect = document.getElementById("sortOrder");
+    const menuToggle = document.getElementById("menuToggle");
+    const searchMenu = document.getElementById("searchMenu");
 
     let selectedTags = new Set();
     let currentKeyword = "";
-    let currentSortOrder = "desc";
 
-    // 初期タグ一覧の描画
+    menuToggle.addEventListener("click", () => {
+      searchMenu.classList.toggle("hidden");
+    });
+
     const allTags = [...new Set(data.flatMap(entry => entry.tags))];
     allTags.sort();
     allTags.forEach(tag => {
@@ -32,14 +34,8 @@ fetch("index.json")
       tagFilter.appendChild(span);
     });
 
-    // イベントリスナー
     searchInput.addEventListener("input", e => {
       currentKeyword = e.target.value.toLowerCase();
-      render();
-    });
-
-    sortOrderSelect.addEventListener("change", e => {
-      currentSortOrder = e.target.value;
       render();
     });
 
@@ -61,9 +57,7 @@ fetch("index.json")
       filtered.sort((a, b) => {
         const dateA = new Date(a.timestamp);
         const dateB = new Date(b.timestamp);
-        return currentSortOrder === "asc"
-          ? dateA - dateB
-          : dateB - dateA;
+        return dateA - dateB;
       });
 
       filtered.forEach(entry => {
