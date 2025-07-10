@@ -90,3 +90,7 @@ header p {
   margin-right: 0.3em;
   margin-bottom: 0.3em;
 }
+.entry-tag.active {
+  background-color: #5BA4D6;
+  color: white;
+}
