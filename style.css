@@ -1,7 +1,11 @@
-body {
+body, html {
+  height: 100%;
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   background: linear-gradient(to bottom, #d8ecff 0%, #98c4ff 50%, #4a76a8 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   color: #222;
 }
 

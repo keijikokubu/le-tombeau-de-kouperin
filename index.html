@@ -10,8 +10,9 @@
   <header>
     <h1>空計画の墓</h1>
     <p>Le Tombeau de Kouperin</p>
-    <div class="year-navigation" id="yearNav">
-      <span class="current-year">2025</span>
+    <div class="year-navigation" id="yearNav"></div>
+    <div style="text-align:center; margin-top: 0.5em;">
+      <select id="yearSelector" style="display: none;"></select>
     </div>
   </header>
 
@@ -19,7 +20,6 @@
     <div class="search-controls">
       <input type="text" id="searchInput" placeholder="キーワード検索…" />
       <button id="searchButton">検索</button>
-      <div id="tagFilter" class="tag-filter"></div>
     </div>
 
     <div id="timeline" class="timeline">
@@ -35,42 +35,70 @@
         const searchInput = document.getElementById("searchInput");
         const searchButton = document.getElementById("searchButton");
         const yearNav = document.getElementById("yearNav");
+        const yearSelector = document.getElementById("yearSelector");
 
         let selectedTag = null;
         let currentKeyword = "";
         let selectedYear = null;
 
-        const years = [...new Set(data.map(entry => entry.timestamp.slice(0, 4)))].sort();
-        const latestYear = years[years.length - 1];
-        selectedYear = latestYear;
+        const allYears = [...new Set(data.map(entry => entry.timestamp.slice(0, 4)))].map(Number);
+        const minYear = 2023;
+        const maxYear = Math.max(...allYears);
+        const availableYears = [];
 
-        years.forEach(year => {
-          const span = document.createElement("span");
-          span.className = "year-option";
-          span.textContent = year;
-          span.onclick = () => {
-            selectedYear = year;
-            selectedTag = null;
-            currentKeyword = "";
-            searchInput.value = "";
-            render();
-          };
-          yearNav.appendChild(span);
+        for (let y = minYear; y <= maxYear; y++) {
+          if (allYears.includes(y)) availableYears.push(y);
+        }
+
+        selectedYear = String(maxYear);
+
+        function updateYearNav() {
+          const index = availableYears.indexOf(Number(selectedYear));
+          const prev = availableYears[index - 1];
+          const next = availableYears[index + 1];
+
+          yearNav.innerHTML = [
+            prev ? `<span class="year-option" data-year="${prev}">${prev}</span>` : '',
+            `<span class="year-option current-year" data-year="${selectedYear}">${selectedYear}</span>`,
+            next ? `<span class="year-option" data-year="${next}">${next}</span>` : ''
+          ].filter(Boolean).join(' < ');
+
+          Array.from(yearNav.querySelectorAll(".year-option")).forEach(el => {
+            el.onclick = () => {
+              selectedYear = el.dataset.year;
+              selectedTag = null;
+              currentKeyword = "";
+              searchInput.value = "";
+              updateYearNav();
+              render();
+            };
+          });
+
+          // 全年セレクターの更新（隠し機能）
+          yearSelector.innerHTML = availableYears.map(y =>
+            `<option value="${y}" ${y == selectedYear ? "selected" : ""}>${y}</option>`
+          ).join("");
+        }
+
+        yearSelector.addEventListener("change", () => {
+          selectedYear = yearSelector.value;
+          selectedTag = null;
+          currentKeyword = "";
+          searchInput.value = "";
+          updateYearNav();
+          render();
         });
 
         searchButton.addEventListener("click", () => {
           currentKeyword = searchInput.value.toLowerCase();
           selectedTag = null;
           selectedYear = null;
+          updateYearNav();
           render();
         });
 
         function render() {
           container.innerHTML = "";
-
-          Array.from(yearNav.querySelectorAll(".year-option")).forEach(el => {
-            el.classList.toggle("active", el.textContent === selectedYear);
-          });
 
           let filtered = data.filter(entry => {
             const entryYear = entry.timestamp.slice(0, 4);
@@ -113,6 +141,7 @@
                 selectedYear = null;
                 currentKeyword = "";
                 searchInput.value = "";
+                updateYearNav();
                 render();
               });
             });
@@ -121,6 +150,7 @@
           });
         }
 
+        updateYearNav();
         render();
       })
       .catch(error => {
