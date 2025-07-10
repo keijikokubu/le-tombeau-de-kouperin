@@ -1,4 +1,11 @@
 
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background: linear-gradient(to bottom, #E2F1FB 0%, #5BA4D6 100%);
+  color: #192238;
+}
+
 .menu-toggle {
   position: fixed;
   top: 1em;
@@ -7,7 +14,7 @@
   border: none;
   font-size: 2em;
   cursor: pointer;
-  color: #222;
+  color: #192238;
   z-index: 999;
 }
 
@@ -20,7 +27,7 @@
 }
 
 .search-menu {
-  background-color: #f2f6fa;
+  background-color: #ffffffcc;
   padding: 1em;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -72,14 +79,12 @@
 .menu-section {
   margin-top: 0.8em;
   font-size: 0.9em;
-  color: #444;
 }
 
 .year-navigation {
   margin-top: 0.5em;
   font-size: 0.95em;
   text-align: center;
-  color: #444;
 }
 
 .year-navigation .year-option {
@@ -91,7 +96,7 @@
 .year-navigation .year-option.active {
   font-weight: bold;
   text-decoration: underline;
-  color: #222;
+  color: #192238;
 }
 
 .timeline-entry {
@@ -110,7 +115,7 @@
 .entry-title a {
   font-weight: bold;
   font-size: 1.05em;
-  color: #1e2a38;
+  color: #192238;
   text-decoration: none;
 }
 
@@ -121,7 +126,7 @@
 .entry-summary {
   font-size: 0.9em;
   margin-top: 0.5em;
-  color: #444;
+  color: #192238;
 }
 
 .entry-tags span {
