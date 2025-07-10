@@ -74,11 +74,24 @@
             };
           });
 
-          // 全年セレクターの更新（隠し機能）
           yearSelector.innerHTML = availableYears.map(y =>
             `<option value="${y}" ${y == selectedYear ? "selected" : ""}>${y}</option>`
           ).join("");
         }
+
+        searchButton.addEventListener("click", () => {
+          currentKeyword = searchInput.value.toLowerCase();
+          selectedTag = null;
+          selectedYear = null;
+          render();
+        });
+
+        searchInput.addEventListener("keydown", e => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            searchButton.click();
+          }
+        });
 
         yearSelector.addEventListener("change", () => {
           selectedYear = yearSelector.value;
@@ -89,26 +102,20 @@
           render();
         });
 
-        searchButton.addEventListener("click", () => {
-          currentKeyword = searchInput.value.toLowerCase();
-          selectedTag = null;
-          selectedYear = null;
-          updateYearNav();
-          render();
-        });
-
         function render() {
           container.innerHTML = "";
+
+          const keywords = currentKeyword.split(/\s+/).filter(k => k);
 
           let filtered = data.filter(entry => {
             const entryYear = entry.timestamp.slice(0, 4);
             const matchesYear = selectedYear ? entryYear === selectedYear : true;
             const matchesTag = selectedTag ? entry.tags.includes(selectedTag) : true;
-            const matchesKeyword =
-              entry.title.toLowerCase().includes(currentKeyword) ||
-              entry.summary.toLowerCase().includes(currentKeyword) ||
-              entry.tags.some(tag => tag.toLowerCase().includes(currentKeyword));
-
+            const matchesKeyword = keywords.every(kw =>
+              entry.title.toLowerCase().includes(kw) ||
+              entry.summary.toLowerCase().includes(kw) ||
+              entry.tags.some(tag => tag.toLowerCase().includes(kw))
+            );
             return matchesYear && matchesTag && matchesKeyword;
           });
 
