@@ -10,20 +10,25 @@
   <header>
     <h1>空計画の墓</h1>
     <p>Le Tombeau de Kouperin</p>
-    <div class="year-navigation">
+    <div class="year-navigation" id="yearNav">
       <span class="current-year">2025</span>
     </div>
   </header>
 
-  <div class="container">
-  <div class="search-controls">
-    <input type="text" id="searchInput" placeholder="キーワード検索…" />
-    <div id="tagFilter" class="tag-filter"></div>
-    <select id="sortOrder">
-      <option value="desc">新しい順</option>
-      <option value="asc">古い順</option>
-    </select>
+  <button id="menuToggle" class="menu-toggle hidden">☰ メニュー</button>
+  <div id="searchMenu" class="hidden">
+    <!-- ここにメニュー項目が入る -->
   </div>
+
+  <div class="container">
+    <div class="search-controls">
+      <input type="text" id="searchInput" placeholder="キーワード検索…" />
+      <div id="tagFilter" class="tag-filter"></div>
+      <select id="sortOrder">
+        <option value="desc">新しい順</option>
+        <option value="asc">古い順</option>
+      </select>
+    </div>
 
     <div id="timeline" class="timeline">
       <!-- JSで生成 -->
