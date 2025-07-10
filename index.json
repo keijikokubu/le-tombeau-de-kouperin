@@ -156,5 +156,19 @@
     ],
     "timestamp": "2023-06-03",
     "path": "conversations/2023_06_03_art_discussion_emotion.html"
+  },
+  {
+    "id": "2023_06_24_education_sustainability_dialogue",
+    "title": "持続可能な社会の挑戦",
+    "summary": "対話者は、持続可能な社会の実現をめぐり、教育の役割について掘り下げて議論した。持続可能な社会とは静的な理想ではなく、動的な運動であり、それを実現するためには教育が重要であることを認識。一方で、教育は特定の価値観を押し付けるものではなく、主体的な思考と判断力を育てるために、問い続けることがその本質であるという結論に至った。",
+    "tags": [
+      "持続可能性",
+      "教育",
+      "批判的思考",
+      "問い",
+      "対話"
+    ],
+    "timestamp": "2023-06-24",
+    "path": "conversations/2023_06_24_education_sustainability_dialogue.html"
   }
 ]
