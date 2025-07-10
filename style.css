@@ -38,11 +38,7 @@ body {
 }
 
 .search-menu.hidden {
-  max-height: 0;
-  opacity: 0;
-  padding: 0 1em;
-  border: none;
-  box-shadow: none;
+  display: none;
 }
 
 .search-menu input[type="text"] {
@@ -99,12 +95,19 @@ body {
   color: #192238;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
 .timeline-entry {
   background-color: #ffffffdd;
   padding: 1em;
   border-radius: 12px;
-  margin: 1em 0;
+  margin: 1.2em auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
 }
 
 .entry-date {

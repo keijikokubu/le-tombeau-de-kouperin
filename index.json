@@ -142,5 +142,19 @@
     ],
     "timestamp": "2025-07-02",
     "path": "conversations/2025_07_02_nihon_shoninkannen_to_creative.html"
+  },
+  {
+    "id": "2023_06_03_art_discussion_emotion",
+    "title": "芸術と熱意",
+    "summary": "芸術の意味や価値、人が芸術に携わる理由、また芸術と病やお金、国との関わりについて幅広く語り合った。途中、芸術に熱中できない自分の心理を探り、精神状態や環境が原因であることに気づく。対話者が実際に絵を描いた後であったことから、自身の精神や創作意欲についても振り返った。",
+    "tags": [
+      "芸術",
+      "自己表現",
+      "精神状態",
+      "創作活動",
+      "感情表現"
+    ],
+    "timestamp": "2023-06-03",
+    "path": "conversations/2023_06_03_art_discussion_emotion.html"
   }
 ]
