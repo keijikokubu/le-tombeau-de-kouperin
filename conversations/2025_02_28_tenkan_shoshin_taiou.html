@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>tenkan_shoshin_taiou</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">tenkan_shoshin_taiou</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/02/28</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">癲癇の発作がでたら、どうしたらいいですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">癲癇（てんかん）の発作が起こった場合、以下の対応をしてくださ
+…
+機関で診察を受けることをおすすめします。</div>
+          <div class="full">癲癇（てんかん）の発作が起こった場合、以下の対応をしてください。
+
+
+1. 落ち着いて対応する
+
+
+発作は通常 数秒から数分で自然に治まる ことが多いため、慌てず冷静に対応しましょう。
+
+
+2. 発作中の安全確保
+
+
+周囲の危険を取り除く
+周りに硬いものや鋭利なものがあれば遠ざけ、頭を保護します。
+（例: 机の角や家具の突起に頭をぶつけないようにする）
+
+体を揺さぶらない
+無理に押さえつけたり、動かそうとしない。
+（発作を止めることはできません）
+
+口に何も入れない
+「舌を噛むのを防ぐために物を入れる」というのは誤解です。
+→ 窒息の危険があるため、絶対に何も入れない。
+
+横向きに寝かせる（回復体位）
+嘔吐した場合に窒息しないよう、 顔を横向きにする。
+
+
+3. 発作が治まるのを待つ
+
+
+通常 1～2分で発作は終わる ため、時間を計りながら見守ります。
+
+
+4. 発作後の対応
+
+
+意識が回復するまで側にいる
+発作後は ぼんやりした状態 になったり、 混乱 することがあります。
+
+呼びかけても反応が鈍い場合は無理に動かさない
+
+意識が戻ったら、安心できるよう声をかける
+（例: 「大丈夫ですよ」「今は安全です」）
+
+
+5. 救急車を呼ぶべき場合（119番）
+
+
+以下の状況では すぐに救急車を呼ぶ 必要があります。
+
+
+✅ 発作が5分以上続く（てんかん重積状態 の可能性）
+✅ 意識が戻らない（発作が終わったのに意識が戻らない）
+✅ 短時間に何度も発作を繰り返す
+✅ 初めての発作である
+✅ 頭を強く打った、けいれん後に怪我をしている
+✅ 水中で発作が起こった（溺水の危険があるため）
+
+
+6. かかりつけの医師へ報告
+
+
+持病で癲癇の診断を受けている場合は、後で医師に報告し、必要に応じて治療や薬の調整を相談します。
+
+
+
+🔹 緊急時のポイント
+
+
+慌てない
+
+発作が5分以上続いたら119番通報
+
+安全確保（周囲の危険物を除き、横向きに）
+
+発作が終わるまで見守る
+
+
+もし頻繁に発作が起こる場合や、初めての発作なら、早めに医療機関で診察を受けることをおすすめします。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: tenka
+…
+応, 安全確保, 回復体位, 初心者向け</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: tenkan_shoshin_taiou
+サマリー: てんかんの発作が起きた際の対応について、基本的な手順と注意点を解説した対話。安全確保のための行動（押さえつけない、口に物を入れない、横向きにする）、発作が収まるまでの見守り方、救急車を呼ぶべきケース（5分以上の発作、意識が戻らない、初めての発作など）を具体的に示している。初動対応として大切なポイントを簡潔に学べる内容。
+タグ: てんかん, 応急処置, 医療, 救急対応, 安全確保, 回復体位, 初心者向け</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

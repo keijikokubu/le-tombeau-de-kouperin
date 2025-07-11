@@ -1,0 +1,1455 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>escalator_talk_for_kids</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">escalator_talk_for_kids</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/01/25</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ボリは何ですか?”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">1って数字の1のことですよ。何か具体的に聞きたいことがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“本日はご視聴ありがとうございました。”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、数字の一つ目を指す記号です。また、順番の最初を意味することもあります</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Thanks.”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、数の最初を表す記号で、何かを数える時の最初の単位です。例えば、順番を表すときに「第一」と使います。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">1は数字で、物事の最初を表します。例えば、「1番目」というように使いますよ。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、数を数えるときの最初の数字です。例えば、「1番」は最初のものを意味します。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“チャンネル登録をお願いいたします。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は数学で、最小の自然数を表します。それが基本の意味ですね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、数の始まりを表す数字です。例えば、何かを数えるときや順番を示すときに使われます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“チャンネル登録をお願いいたします。”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、数を数えるときの最初の数字です。例えば、「1番目」や「1つ」といったように、最初のものを指します。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“あとはなんでバイキンマンですか”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">ばいきんまんは、アニメ「アンパンマン」に登場するキャラクターです。彼は悪役で、アンパンマンのライバルとして描かれています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」と「ばいきんまん」に直接的な関連はありませんが、ばいきんまんの話をしているときに「1」が出てくることもあるかもしれませんね。どういう状況で「1」と「ばいきんまん」を関連づけたんですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうですね、「ばいきんまん」はアンパンマンの有名な敵役です。彼はいつもアンパンマンを倒そうとしますが、最後には負けてしまうことが多いですね。ばいきんまんのエピソードで何か気になることがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:03</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">なるほど、「いちらくん」というキャラクターがいたんですね。それは何の作品のキャラクターですか？ばいきんまんと関係がありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“バイキンマンだよ”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">なるほど、「いちらくん」もばいきんまんと関係があるんですね。ばいきんまんの世界には、いろんなキャラクターがいて面白いですね。他に気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうなんですね。「1」と「ばいきんまん」に関する話をしていたんですね。何か他にも聞きたいことがあれば教えてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“なぜおこくんですか?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">ああ、なるほど。「1」は数字の「1」ですね。お話が混ざってしまったようで、ごめんなさい。何についてお話ししたいですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」についての話でしたね。数字の「1」は、数を数えるときの最初の単位で、基本的な数の概念ですね。他に「1」について気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“同じ探検ですか?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は数字の最初の単位で、何かを数え始めるときに使う基本の数字です。それは、最初の一歩や始まりを象徴する数</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、何かを数え始</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」は、最初の数字で基本的な単位ですね。何か他に気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">わかりました。また何かあれば教えてください</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">かしこまりました。いつでも気軽に声をかけてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“チャンネル登録をお願いいたします。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうですね、あまり気負わずに話せればと思います。また何かありましたら教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、どういたしまして。また何かあればいつでもどうぞ。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうしたらよくてくれないの?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">いえ、いつでもここにいますよ。何かあればいつでも話しかけてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。いつでもお話しできるのを楽しみにしています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“なぜ描くんですか?”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「1」が赤く表示されるのは、目立たせるためや重要なポイントを示すためかもしれません。特に教材や説明資料では、「1」が赤で強調されることが多いです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうですね。強調のために赤くすることが多いです。他に気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">わかりました。また何かあれば気軽に声をかけてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“チャンネル登録をお願いいたします。”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">もちろんです。いつでもお待ちしていますよ。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。いつでもお話しできる</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、どういたしまして。またお話ししま
+
+
+コンテンツにフラグが立てられました。利用規約と利用規定を確認してください。当社側の間違いである場合は、この回答への「よくないね」でお知らせください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうして寄ってくれないの?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">もちろんです。いつでもお話しできますよ。また何かあれば教えてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。また何かあったらお声がけくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“エスカレーターはなぜ赤くんですか?”
+
+
+00:03</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターが動くのは、モーターでステップを回転させることで実現しています。ボタンを押すとモーターが動き、ステップが連続して動く仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“本日はご視聴ありがとうございました。”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターが動き出すのは、センサーが人を検知するか、ボタンを押すことでモーターが起動するからです。こうしてステップが動き始めます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターのセンサーが人を検知するか、ボタンを押すことでモーターが動き、ステップが動き始める仕組みです。他に何か気になる</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうするんですか?”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターのモーターは、電気を使って動きます。センサーが人を感知すると、モーターに電力が供給され、ステップが動き始めます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、センサーで人を検知したり、ボタンを押したりすることでモーターが作動します。電気が供給されてステップが動き出す仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“気になるんですか?エスカレーター”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、モーターによってステップが動く仕組みで、人を乗せて上下に移動させる装置です。センサーやボタンで動き出す仕組みになっています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、電動で階段が動く装置です。モーターが作動し、ステップが連続して動いて、人を運びます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、電動モーターでステップが動くように設計されています。センサーやボタンで起動し、階段が連続して動く仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうですか?”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、そうです。エスカレーターは電動モーターで動いています。センサーやボタンを使って、人が近づくと動く仕組みになっています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Ciao!”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。いつでも気</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターのボタンは、起動させたり止めたりするために使われます。例えば、非常停止ボタンは緊急時に使用します。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Terima kasih telah menonton!”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターには通常、鍵はありません。主にボタンやセンサーで操作されます。非常停止ボタンなどは手動で押す仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“チャンネル登録をお願いいたします。”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、電動モーターで階段部分が動く装置です。センサーやボタンで起動し、人を乗せて上下に運ぶ仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうですね。エスカレーターは電動モーターで動き、センサーやボタンで操作される仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Bye-bye.”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレ</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、エスカレーターは電動モーターで階段が動く仕組みです。他に何か気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、エスカレーターは電気を使って動きます。電動モーターで階段部分を動かしています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ガガーって鳴ってるやつは?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">「ガガー」って鳴っている音は、エスカレーターのモーター音やメカニズムの動作音かもしれません。それが動いている音ですね。他に何か気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターの音が気になるんですね。それは動作音かもしれません。気になることがあれば、また教えてください</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターが鳴っている音は、動作中の機械音やモーターの音かもしれませんね。他に気になることがあれば教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターの音が気になるんですね。他に何か気になることがあれば、ぜひ教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“You might.”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">気になることがあれば、いつでも話してくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">いえいえ、いつでもお話しに付き合いますよ。何かあればまた教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、気になることがあれば、また教えてくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、どうぞ。いつでも話してくださいね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Thank you.”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。いつでも気軽にお話しください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“I know I&#39;m not in there!”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレ</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターが動くのは、モーターでステップを回転させる仕組みです。センサーやボタンが使われていて、人が近づくと動き出します。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうやって作ってんの?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、電動モーターで動く階段です。主に金属やゴムで作られ、セ</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">文字起こしを利用できません
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは電動モーターで階</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“動くんですか?”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">はい、エスカレーターは電動モーターで動いています。センサーやボタンで操作され、階段が動く仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“家もエスカレーターあるやんこの家”
+
+
+00:04</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">そうなんですね、エスカレーターがある家は珍しいですね。家の中で移動が楽になりそうです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Vă mulțumesc pentru Like!”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、電動モーターで動くので、ボタンやセンサーで操作します。家にあると、移動がとても便利になりますね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターがあると、階段の上り下りが楽になるので便利ですね。何か特別な理由で家に設置されているんですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">“In that case, I would like to
+…
+next video.”
+
+
+00:00</div>
+          <div class="full">“In that case, I would like to thank you for watching this video. I hope you enjoyed it. I&#39;ll see you in the next video.”
+
+
+00:00</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">なるほど、家にエスカレーターがあると便利そうですね。他に何か気になることがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“電気はどうして動くんですか?”
+
+
+00:02</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは電気で動くため、ボタンやセンサーで起動します。人が近づくと動き出す仕組みです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“どうやって作ってるんですか?”
+
+
+00:03</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、金属やゴムなどの素材で作られ、電動モーターやセンサー、ステップ部分が組</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:01</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、金属やゴムなどで構成され、電動モーターやセンサーで動く仕組みです。階段部分は連続して動くように設計されています。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“Thank you. Have a great day.”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、金属やゴムなどで作られており、電動モーターやセンサーで動作します。階段が連続して動く設計です。他に何か気になることはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">“ご視聴ありがとうございました。”
+
+
+00:00</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">エスカレーターは、金属やゴムなどの素材で作られ、電動モーターやセンサーによって動作します。階段部分が連続して動くように設計されています。他に気になることがあれば教えて</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: escal
+…
+科学, モーターの仕組み, やさしい説明</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: escalator_talk_for_kids
+サマリー:
+本対話では、幼児との音声対話を想定したやりとりが行われており、「1」や「ばいきんまん」、エスカレーターの仕組みなど、子どもの好奇心に基づいた素朴な質問に対し、平易でやさしい言葉での応答が続く。エスカレーターの動作原理（モーター・センサー）や素材、家庭にある場合の利便性なども触れられ、知的好奇心に応える形で対話が展開されている。
+タグ: 子どもとの会話, エスカレーター, 幼児教育, 好奇心, 日常の科学, モーターの仕組み, やさしい説明</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

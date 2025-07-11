@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>time_maze_love_conflict</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">time_maze_love_conflict</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2024/04/29</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ゲームをしましょう。
+一人の人間の、全く別の3つのエピソードを提案してください。
+僕がそれを一つのストーリーにします。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです。では、3つのエピソードを提案しますね。
+
+
+迷
+…
+み合わせて、興味深い冒険を作りましょう。</div>
+          <div class="full">もちろんです。では、3つのエピソードを提案しますね。
+
+
+迷宮探検: 主人公は古代遺跡の迷宮に挑む冒険者です。彼は古代の秘密を解き明かすために、危険な罠や怪物に立ち向かいます。
+
+宇宙探索: 惑星間の宇宙船で、主人公は未知の惑星を探索する任務に就いています。彼は異星人や未知の生物と出会いながら、宇宙の謎に挑戦します。
+
+タイムトラベル: 主人公はタイムマシンの発明者であり、過去や未来を旅する能力を持っています。彼は歴史上の出来事に介入したり、未来の危機を回避したりしながら、時間の流れを操ります。
+
+
+これらのエピソードを1つのストーリーに組み合わせて、興味深い冒険を作りましょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">まず、1と2を接続します。
+普通の迷宮探検の物語は、地球上の迷宮を探検しますが、この物語では、それが宇宙規模です。すでに滅んだ惑星を含め、主人公の任務は星を渡り歩いて迷宮を探検するというものです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">興味深い設定ですね。では、主人公は宇宙船でさまざまな惑星を訪
+…
+ら、彼は迷宮の奥深くへと進んでいきます。</div>
+          <div class="full">興味深い設定ですね。では、主人公は宇宙船でさまざまな惑星を訪れながら、その中にある古代の迷宮を探索します。これらの迷宮には、古代文明の技術や知識が隠されている可能性があります。彼の目的は、それらの秘密を解き明かし、宇宙全体の歴史や未来に影響を与える可能性がある重要な発見をすることです。途中で、異星人や未知の生物との遭遇、そして宇宙の謎に挑戦しながら、彼は迷宮の奥深くへと進んでいきます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ある星に辿り着きます。そこは、一見他の迷宮と変わらない。すで
+…
+をしたような不気味に整った遺跡なのです。</div>
+          <div class="full">ある星に辿り着きます。そこは、一見他の迷宮と変わらない。すでに滅んだ遺跡です。しかし、主人公は何か違和感を感じる。決定的な天災や、文明が廃れてしまうような原因となる「腐敗」「戦争」の跡もない。例えていえば、ちゃんと準備をして店じまいをしたような不気味に整った遺跡なのです。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">その星の遺跡が他の迷宮とは異なることに気づいた主人公は、興味
+…
+超えるものであることが明らかになります。</div>
+          <div class="full">その星の遺跡が他の迷宮とは異なることに気づいた主人公は、興味をそそられます。遺跡の調査を始めると、彼は壁に刻まれた古代の文字を見つけます。それは、他の迷宮とは異なる言語で書かれており、彼がこれまで見たことのないものです。さらに探索を進めると、主人公は遺跡が以前の滅亡や衰退ではなく、まるで突然の消滅があったかのような状態であることに気づきます。
+
+
+その謎めいた状況の中で、主人公は遺跡に隠された秘密を解き明かすために奮闘します。しかし、彼が探索を進めるにつれて、遺跡が持つ謎がますます深まり、その真相は彼の想像を超えるものであることが明らかになります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">その文明が行なったことは、過去への移民でした。
+未来にむかっ
+…
+企だてを阻止すべく、彼らを追いかけます。</div>
+          <div class="full">その文明が行なったことは、過去への移民でした。
+未来にむかって展開していくことは、競合する他の勢力との葛藤を意味します。しかし、彼らが力を持つより前の時間を支配すれば、全てを手に入れることができる。
+「根本を抑えれば、果実は我々のものになる。」
+彼は、その企だてを阻止すべく、彼らを追いかけます。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">主人公が遺跡の秘密を解き明かすにつれて、その文明が行った行動
+…
+間の秩序を守ることができるのでしょうか。</div>
+          <div class="full">主人公が遺跡の秘密を解き明かすにつれて、その文明が行った行動が明らかになります。彼らは未来への移民を行い、時間を超えて自らの勢力を拡大しようとしていたのです。彼らは未来の資源や技術を手に入れるために、過去の文明を支配しようとしていたのです。
+
+
+主人公はこの危険な計画を阻止するために、その文明を追いかけます。彼は時間を越えて彼らを追跡し、彼らの企みを阻止するためにあらゆる手段を尽くします。彼の冒険は、単なる迷宮探検を超えて、宇宙規模の戦いへと発展していきます。果たして主人公は、未来の支配者たちを打ち倒し、時間の秩序を守ることができるのでしょうか。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">そして、主人公は時間を超え、過去にタイムスリップしたその星の
+…
+、主人公のルーツとなる民族だったのです。</div>
+          <div class="full">そして、主人公は時間を超え、過去にタイムスリップしたその星の住民に出会います。彼らが口にしたこと。
+「ご苦労だった。調べてきたことを報告したまえ。」
+そう、全宇宙を支配しようと過去に侵攻した宇宙人とは、主人公のルーツとなる民族だったのです。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">主人公が過去にタイムスリップしてその星の住民と出会い、彼らが
+…
+秩序を守るために戦う決意を固めるのです。</div>
+          <div class="full">主人公が過去にタイムスリップしてその星の住民と出会い、彼らが口にした言葉に驚きます。その住民たちが宇宙を支配しようとしていた宇宙人こそ、主人公のルーツとなる民族だったのです。
+
+
+この衝撃の事実に直面した主人公は、自らの過去と向き合うことを余儀なくされます。彼は自分の民族が過去に犯した過ちに対する責任を感じながらも、その行動を正すために立ち上がります。彼は未来から来た者として、自らの民族の行いを変え、時間の秩序を守るために戦う決意を固めるのです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">問題は、主人公がその星（つまり、自分と同じ民族）の住人の一人
+…
+ば、彼らは野望を果たすことができません。</div>
+          <div class="full">問題は、主人公がその星（つまり、自分と同じ民族）の住人の一人と恋に落ちていたこと。
+この民族をやっつけるべきか、それとも、ともに宇宙を支配すべきか。
+愛か、倫理か。
+
+
+主人公が握っているのは、「星の歴史」、つまり、この先に宇宙で展開される星々のたどる運命。その真実を渡せば、彼らが宇宙を支配する。
+しかし、嘘を伝えれば、あるいはそのデータを捨てれば、彼らは野望を果たすことができません。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">主人公が自分と同じ民族の住人と恋に落ちていたことが、彼の選択
+…
+その選択が物語の行方を決定するでしょう。</div>
+          <div class="full">主人公が自分と同じ民族の住人と恋に落ちていたことが、彼の選択をさらに複雑にします。彼は愛と倫理の間で葛藤し、自らの行動が将来の宇宙にどのような影響を与えるかを考えなければなりません。
+
+
+一方で、主人公が握る「星の歴史」が未来の宇宙の運命を左右する可能性があります。彼はその情報を使って、自らの民族が宇宙を支配するかどうかを決定する力を手にしています。
+
+
+主人公は、愛と倫理、そして未来の宇宙の運命という大きな責任の間で板挟みになります。彼は自らの心と正義に従いながら、最善の選択をする必要があります。果たして主人公はどちらを選ぶのでしょうか。自らの民族を打ち倒し、未来の宇宙を守るために戦うのか、それとも愛を選んで共に宇宙を支配するのか、その選択が物語の行方を決定するでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">結論から言えば、主人公はデータを渡すが、恋人を救います。
+そ
+…
+にむけて旅立つのです。めでたしめでたし。</div>
+          <div class="full">結論から言えば、主人公はデータを渡すが、恋人を救います。
+そこで鍵となるのが、「決定論の陥穽」です。
+あらかじめ決められた未来も、その未来を当事者が認知することで簡単に変化してしまいます。もし、未来のデータがそのまま遂行されるとすれば、その未来について知っている人間は絶対にその時間に参与することはできない。
+この事実に気づいて、主人公は自信をもって、全く意味の「未来のデータ」を相手に引き渡すことを決断するのでした。
+そして、二人は「全く予測できない未来」にむけて旅立つのです。めでたしめでたし。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">素晴らしい結末ですね。主人公が決定論の陥穽に気づき、自らの選
+…
+たし、素晴らしいストーリーの結末ですね。</div>
+          <div class="full">素晴らしい結末ですね。主人公が決定論の陥穽に気づき、自らの選択で未来を変える決断を下す姿は、勇気と愛情に満ちたものです。彼が恋人を救いつつも、未来のデータを渡すことで新たな可能性を切り拓く道を選んだことは、感動的な決断です。
+
+
+二人が未来への旅に出る姿は、新たな冒険の始まりを予感させます。彼らの旅は全く予測できない未来に向けてのものであり、その未来にはさらなる挑戦や成長が待ち受けていることでしょう。めでたしめでたし、素晴らしいストーリーの結末ですね。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: time_
+…
+ムトラベル, 倫理葛藤, 恋愛, 決定論</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: time_maze_love_conflict
+サマリー:
+宇宙を舞台にした迷宮探検の物語。主人公は古代文明の遺跡を探索する中で、未来への時間移民を企てる自らのルーツとなる民族と出会う。恋に落ちた相手と、宇宙支配をめぐる倫理的葛藤に直面するが、「決定論の陥穽」に気づき、未来のデータを渡しながらも恋人を救う決断を下す。二人は未知の未来へ旅立つことで、全く予測できない運命を選ぶ物語。
+タグ:
+SF, 宇宙探検, 迷宮, タイムトラベル, 倫理葛藤, 恋愛, 決定論</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

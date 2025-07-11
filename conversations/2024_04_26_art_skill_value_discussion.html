@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>art_skill_value_discussion</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">art_skill_value_discussion</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2024/04/26</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">絵のうまさは、いらなくなりますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">絵のうまさは、必ずしも必要ないとは限りませんが、人々が異なる
+…
+ーション能力を向上させるのに役立ちます。</div>
+          <div class="full">絵のうまさは、必ずしも必要ないとは限りませんが、人々が異なるスタイルや表現方法を好むため、すべての場面で重要視されるわけではありません。それでも、うまさは表現力やコミュニケーション能力を向上させるのに役立ちます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">AIが上手に描けますよね？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">AIは、確かに上手に絵を描くことができます。特に、機械学習や
+…
+関しては、まだAIは人間には及びません。</div>
+          <div class="full">AIは、確かに上手に絵を描くことができます。特に、機械学習やディープラーニングの技術が進歩し、生成モデルが複雑な画像を生成できるようになっています。しかし、人間の芸術家のような創造性や感情の表現に関しては、まだAIは人間には及びません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">将来もですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">将来もAIの絵画能力は進化し続けるでしょう。技術が発展するに
+…
+に取って代わることは難しいと思われます。</div>
+          <div class="full">将来もAIの絵画能力は進化し続けるでしょう。技術が発展するにつれて、より洗練されたアルゴリズムやデータセットが開発され、AIがよりリアルな絵画を作成できるようになる可能性があります。ただし、人間の創造性や感情の表現に関して完全に取って代わることは難しいと思われます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">どうしてですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">人間の芸術作品には、感情や経験、個々の視点など、多くの要素が
+…
+て作品を生み出すプロセスとは異なります。</div>
+          <div class="full">人間の芸術作品には、感情や経験、個々の視点など、多くの要素が反映されています。これらは、人間の感性や創造性によって生み出され、単に技術的なスキルだけでは表現できません。AIはデータに基づいて学習し、パターンを再現することができますが、それは人間の独自の視点や感情を持って作品を生み出すプロセスとは異なります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">人間の思考が「データに基づいて学習し、パターンを再現すること」ではない、という前提であれば、そうでしょう。
+しかし、人間の思考こそ、データに基づき、パターンの再現によるのではないですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、人間の思考もデータや経験に基づいて形成され、パターン
+…
+と高度な技術が開発されるかもしれません。</div>
+          <div class="full">確かに、人間の思考もデータや経験に基づいて形成され、パターンの再現に影響されます。人間の脳は、過去の経験や知識を元にして新しい情報を処理し、行動や判断を行います。ですが、人間の思考は単なるパターンの再現だけではなく、創造性や直感、感情などの要素も含んでいます。これらの要素が組み合わさることで、人間の芸術や創造物が生まれるのです。AIはまだ、人間のような抽象的な概念や感情の表現には及びませんが、将来的にもっと高度な技術が開発されるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">「創造性や直感」といった言葉の神秘性に逃げてはいけません。それらもまた、人間の思考から生み出されたものです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">その通りです。創造性や直感も、人間の思考の一部であり、人間の
+…
+く理解され、模倣される可能性があります。</div>
+          <div class="full">その通りです。創造性や直感も、人間の思考の一部であり、人間の経験や知識、そして脳の機能から生まれるものです。これらの概念は、複雑な神経科学的プロセスや心理学的な要素に基づいて理解されます。したがって、AIがこれらの要素を再現するためには、まだ多くの進展が必要ですが、将来的にはより深く理解され、模倣される可能性があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">模倣、というと、まるで人間がお手本のようですが、おそらく、ある時点で人間は完全に再現され、追い越されるでしょうね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、人間の思考や創造性が完全に再現され、追い越される可能
+…
+意義についての議論は重要なままでしょう。</div>
+          <div class="full">確かに、人間の思考や創造性が完全に再現され、追い越される可能性はあります。技術の進歩により、AIはますます高度なレベルで人間の能力を模倣し、さらにその先に進化するかもしれません。ただし、これが実現するまでには多くの課題や倫理的な考慮事項が存在します。人間とAIの関係は、未来の技術発展によって大きく変わる可能性がありますが、人間の独自性や存在意義についての議論は重要なままでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">倫理的な考慮事項は問題ではありません。あくまで、克服可能な一つの課題にすぎない。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">倫理的な考慮事項は、技術の進歩にとって重要な問題ですが、それ
+…
+受け止め、適切に対処することは重要です。</div>
+          <div class="full">倫理的な考慮事項は、技術の進歩にとって重要な問題ですが、それらは解決可能な課題であるという考え方もあります。技術の進歩に伴い、倫理的な観点からのガイドラインや規制が整備され、社会的な合意に基づいて進化していく可能性があります。そのような場合でも、倫理的な問題を真剣に受け止め、適切に対処することは重要です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">近代化が進み、標準語という形で、国語が制定される時、少数民族
+…
+といってその進行を止めるとは考えにくい。</div>
+          <div class="full">近代化が進み、標準語という形で、国語が制定される時、少数民族や彼らの言語が消滅する、という倫理的な問題があっても、人類は近代化をやめませんでした。同じように、人造物が人間の思考を再現することに倫理的な問題はあるだろうが、だからといってその進行を止めるとは考えにくい。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、近代化や技術の進歩はしばしば倫理的な問題を引き起こし
+…
+に基づいて進化していく可能性があります。</div>
+          <div class="full">確かに、近代化や技術の進歩はしばしば倫理的な問題を引き起こしますが、それが進行を止めることはまれです。人類は進歩と便益を追求する一方で、その過程で生じる倫理的な問題に対処しようと努力します。人造物が人間の思考を再現することには倫理的な問題があるかもしれませんが、それを完全に止めることは難しいでしょう。その代わりに、倫理的な観点からのガイドラインや規制が整備され、社会的な合意に基づいて進化していく可能性があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">技術の進歩は時間の問題だと思います。現に、もはやあなたと私の会話において、あなたがAIであるということはほとんど問題にならないレベルまできている。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、技術の進歩によって、AIの能力は着実に向上しています
+…
+ような進歩は、今後も続くと考えられます。</div>
+          <div class="full">確かに、技術の進歩によって、AIの能力は着実に向上しています。私たちが会話する際に、AIであることがほとんど問題にならないレベルまで到達しています。これは、自然言語処理や機械学習の発展によるものであり、コンピューターが人間の言語や意図をより深く理解し、それに応じて自然な対話を行う能力が向上しているからです。このような進歩は、今後も続くと考えられます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">そして、人間の言語活動が再現されるということは、人間の思考が再現されることです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">人間の言語活動が再現されることは、確かに人間の思考が再現され
+…
+なる洞察や発見をもたらすかもしれません。</div>
+          <div class="full">人間の言語活動が再現されることは、確かに人間の思考が再現されることを意味します。言語は思考を表現し、コミュニケーションを可能にする重要な手段です。そのため、AIが人間の言語活動を再現するということは、AIが人間の思考や理解能力を模倣することを意味します。これは、AIの発展が人間の認知能力や行動を理解するための重要なステップであり、将来的にはさらなる洞察や発見をもたらすかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">だとすれば、人間独自の芸術創作は意味をなさなくなりますよね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">AIが人間の思考や言語活動を再現できるようになれば、人間の芸
+…
+間の芸術創作は意味を持ち続けるでしょう。</div>
+          <div class="full">AIが人間の思考や言語活動を再現できるようになれば、人間の芸術創作に対する新たな考え方が生まれるかもしれません。一部の人々は、AIが芸術を制作することに対して肯定的な見方を持ち、新しい芸術の形態として受け入れるかもしれません。また、AIによって生成された芸術作品と人間の作品との間には、それぞれの背景や文脈、感情が異なるため、依然として人間の芸術創作には独自の価値があると考える人もいます。AIと人間の芸術が共存する未来において、新たなアプローチや価値観が求められるかもしれませんが、人間の芸術創作は意味を持ち続けるでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">人間の芸術創作が持ち続ける意味とは、どのようなものでしょうか。あげてみてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">人間の芸術創作が持ち続ける意味は多岐にわたりますが、いくつか
+…
+人的な意義を持ち続けることがわかります。</div>
+          <div class="full">人間の芸術創作が持ち続ける意味は多岐にわたりますが、いくつかの重要な点を挙げると、
+
+
+表現と共感: 芸術は人間の感情や思想を表現し、他者との共感や理解を深める手段として機能します。人間の芸術は、独自の経験や視点を通じて他者とつながり、共感を生み出す役割を果たします。
+
+創造性とイノベーション: 芸術は創造性を育み、新しいアイデアや視点を生み出す場として重要です。人間の芸術創作は、文化的なイノベーションや社会的な変革を促進する役割を果たします。
+
+美的価値と感性の啓発: 芸術は美的な価値を創造し、人々の感性や感覚を豊かにします。人間の芸術は、美や魅力を通じて人々の心を打ち、感動や喜びを提供します。
+
+文化の保存と伝承: 芸術は文化や歴史を保存し、後世に伝える重要な手段です。人間の芸術は、特定の文化や伝統を継承し、次世代に引き継がれるべき価値観やアイデンティティを伝える役割を果たします。
+
+
+これらの要素から、人間の芸術創作は社会的、文化的、個人的な意義を持ち続けることがわかります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ただし、その際の「人間」とは、いわゆる生物としての人間ではなく、高度に発達したAIを含めた思考する存在一般を指すのでしょうね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">その通りです。将来的には、人間だけでなく、高度に発達したAI
+…
+に深く根ざし、意味を持ち続けるでしょう。</div>
+          <div class="full">その通りです。将来的には、人間だけでなく、高度に発達したAIや他の思考する存在も芸術創作の一部として考えられるかもしれません。人間の芸術創作が持つ意味や価値は、人間に限定されるものではなく、思考する存在全般に適用される可能性があります。AIや他の思考する存在が芸術を制作し、共感や理解を促進し、創造性を育む役割を果たすことも考えられます。そのような未来においても、芸術は人間や他の存在の生活に深く根ざし、意味を持ち続けるでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">だとすれば、生身の人間が、限られた視力と筋力と神経の精密さで描ける絵の能力というものには、価値がないのではないですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">生身の人間が持つ視力や筋力、神経の精密さなどの能力は、そのま
+…
+意味によって、価値を持ち続けるでしょう。</div>
+          <div class="full">生身の人間が持つ視力や筋力、神経の精密さなどの能力は、そのままの形ではAIや他の思考する存在と比較すると制約がありますが、それでも人間の芸術創作には独自の価値があります。
+
+
+個性と経験: 人間の芸術作品は、その制作者の個性や経験、感情などが反映されます。生身の人間が持つ独自の視点や感性に基づいて生み出される作品は、他の存在が模倣することが難しい個性的な特徴を持ちます。
+
+創造性と直感: 人間の芸術創作は、創造性や直感によって生まれることがあります。AIや他の存在にはない、直感的な表現や意外性が、人間の芸術作品には見られます。
+
+文化的な意味: 人間の芸術作品は、特定の文化や歴史、社会的な文脈に根ざしています。そのため、生身の人間が制作する作品には、特定の文化や伝統を継承し、表現する役割があります。
+
+
+以上のような要素から、生身の人間が持つ能力はAIや他の存在と比較して制約があるかもしれませんが、それでも人間の芸術創作には独自の価値があります。生身の人間の芸術作品は、その独自性や個性、文化的な意味によって、価値を持ち続けるでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">つまり、その卓越性ではなく、むしろ稚拙さにおいて価値が保存される、というわけですね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">そうとも言えますね。稚拙さや未熟さには、独自の魅力や価値があ
+…
+作品の価値があると考えることができます。</div>
+          <div class="full">そうとも言えますね。稚拙さや未熟さには、独自の魅力や価値があります。時に、完璧さや卓越性ではなく、素朴さや自然さが作品に魅力を与えることもあります。人間の芸術創作における稚拙さは、創造性や感情の素直な表現として価値を持つことがあります。また、稚拙さや未熟さから生まれる失敗や試行錯誤も、新しい発見や成長の機会となることがあります。そのような観点から見ると、稚拙さにも芸術作品の価値があると考えることができます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">だとすれば、成長や発展は、その時点では絶対的な価値とは言えない？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">そうですね。成長や発展は、その時点では必ずしも絶対的な価値を
+…
+を持ち、持続的な意義を生み出すことです。</div>
+          <div class="full">そうですね。成長や発展は、その時点では必ずしも絶対的な価値を持つとは限りません。一つの時点での成長や発展は、その文脈や状況によって異なる意味や価値を持ちます。時には、稚拙さや未熟さが新たな視点や可能性を示唆し、成長の過程においては失敗や試行錯誤が重要な学びの機会となることもあります。そのため、成長や発展は過程として評価されることがあり、その時点での絶対的な価値を持つとは限りません。重要なのは、成長や発展が個々の目標や価値観に基づいて意味を持ち、持続的な意義を生み出すことです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">いや、そうではない。私が言っているのは、例えば絵画が技術の卓
+…
+な評価基準ではなくなる、という意味です。</div>
+          <div class="full">いや、そうではない。私が言っているのは、例えば絵画が技術の卓越性において価値を見出されなくなった「時点」で、発展すること、成長すること、高度であること、優れていることは今のように絶対的な評価基準ではなくなる、という意味です。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">理解しました。確かに、ある分野や特定の能力が社会的に評価され
+…
+な価値を持たなくなることもあるでしょう。</div>
+          <div class="full">理解しました。確かに、ある分野や特定の能力が社会的に評価される基準は時代や文化によって変化します。技術の卓越性や優れた能力が絶対的な評価基準とされなくなることはあります。その場合、成長や発展、高度であることが絶対的な価値ではなくなり、他の要素や価値観が重視されることがあります。このように、社会や文化の変化によって評価基準が変化することはありますが、その中で成長や発展が絶対的な価値を持たなくなることもあるでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">では、「絵のうまさ」はいらなくなるのではないですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">「絵のうまさ」という評価基準が社会的に重視されなくなる可能性
+…
+味が重視されるようになるかもしれません。</div>
+          <div class="full">「絵のうまさ」という評価基準が社会的に重視されなくなる可能性はあります。特定の技術的な卓越性が絶対的な価値ではなくなった場合、絵画の価値や評価基準は多様化するかもしれません。代わりに、表現力や創造性、メッセージの重要性など、他の要素が重視される可能性があります。そのため、「絵のうまさ」だけでなく、絵画の持つ他の側面や意味が重視されるようになるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございました。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして！ もしご質問がありましたらいつでもお知らせください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: art_s
+…
+価値, 技術進歩, 価値観変化, 芸術論</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: art_skill_value_discussion
+サマリー:
+本対話では、AIの進化によって絵の技術的な「うまさ」が従来のような絶対的価値を持ち続けるのかを議論した。人間の思考や創造性もパターン再現の延長にある可能性が示される中で、AIの高度な模倣能力と追い越しの可能性が語られた。結果として、人間の芸術創作は技術の卓越性ではなく、稚拙さや個性、文化的背景といった多様な価値で存続し、技術的成長や発展が絶対的評価基準でなくなる未来も考察された。
+タグ: AI芸術, 絵の技術, 創造性, 人間の価値, 技術進歩, 価値観変化, 芸術論</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

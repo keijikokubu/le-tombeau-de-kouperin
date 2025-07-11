@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>whey_vs_soy_protein</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">whey_vs_soy_protein</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/02/19</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ホエイプロテインとソイプロテインの違いって何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ホエイプロテインとソイプロテインの違いは、主に原料・吸収速度
+…
+
+
+目的に応じて使い分けるといいですね！</div>
+          <div class="full">ホエイプロテインとソイプロテインの違いは、主に原料・吸収速度・栄養価・用途の4つの点で分かれます。
+
+
+1. 原料の違い
+
+
+ホエイプロテイン：牛乳由来（ホエイ＝乳清）で、ヨーグルトの上澄みの液体から作られる。
+
+ソイプロテイン：大豆由来で、大豆のたんぱく質を抽出して作られる。
+
+
+2. 吸収速度
+
+
+ホエイプロテイン：吸収が速く、運動後の筋肉修復・成長に適している（約1〜2時間で吸収）。
+
+ソイプロテイン：吸収が比較的ゆっくりで、腹持ちが良く、長時間にわたってアミノ酸を供給（約5〜6時間で吸収）。
+
+
+3. 栄養価と成分
+
+
+ホエイプロテイン
+BCAA（分岐鎖アミノ酸）が豊富：筋肉の回復や成長に役立つ。
+
+必須アミノ酸のバランスが良い：特にロイシンが多く、筋タンパク質の合成を促進。
+
+乳糖を含む：乳糖不耐症の人は注意（ただし、WPI（アイソレート）なら乳糖はほぼ除去）。
+
+ソイプロテイン
+イソフラボンを含む：女性ホルモン（エストロゲン）に似た作用があり、美容や骨の健康に良いとされる。
+
+食物繊維が多め：腹持ちが良く、ダイエット向き。
+
+植物性たんぱく質：動物性たんぱく質を避けたい人やヴィーガンに適している。
+
+
+4. 用途・おすすめの人
+
+
+ホエイプロテイン
+筋肉をつけたい人、運動後のリカバリーを早めたい人に最適。
+
+トレーニング直後に摂るのがおすすめ。
+
+ソイプロテイン
+満腹感が続きやすく、ダイエット中のたんぱく質補給に向いている。
+
+美容や健康維持、ヴィーガン・ベジタリアンの人にも適している。
+
+寝る前や間食に向いている。
+
+
+結論：どちらを選ぶべき？
+
+
+筋肉重視 → ホエイプロテイン
+
+ダイエット・健康重視 → ソイプロテイン
+
+乳製品が苦手・ヴィーガン → ソイプロテイン
+
+吸収の速さが重要 → ホエイプロテイン
+
+満腹感を重視 → ソイプロテイン
+
+
+目的に応じて使い分けるといいですね！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: whey_
+…
+ーガン
+
+
+この性格は気に入りましたか？</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: whey_vs_soy_protein
+サマリー: ホエイプロテインとソイプロテインの違いについて、原料、吸収速度、栄養価、用途の4つの観点から整理。ホエイは牛乳由来で吸収が早く筋肉増強に適しており、ソイは大豆由来で腹持ちがよく健康志向やヴィーガン向き。目的に応じて選ぶべきポイントが明確に解説されている。
+タグ: プロテイン, ホエイ, ソイ, 栄養, 筋トレ, ダイエット, ヴィーガン
+
+
+この性格は気に入りましたか？</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>high_protein_low_carb_menu</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">high_protein_low_carb_menu</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/02/07</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">タンパク質多めのメニューを考えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">タンパク質を多めに摂れるメニューをいくつか考えました。目的（
+…
+あれば、それに合わせた提案もできますよ。</div>
+          <div class="full">タンパク質を多めに摂れるメニューをいくつか考えました。目的（筋トレ・ダイエット・バランス重視など）があれば、それに応じた調整もできます。
+
+
+朝食
+
+
+ギリシャヨーグルト＆ナッツボウル
+ギリシャヨーグルト（無糖）200g
+
+ミックスナッツ（アーモンド・クルミなど）20g
+
+ハチミツ or ベリー類（少量）
+
+タンパク質：約20g
+
+オムレツ（チーズ＆ハム入り）
+卵2個
+
+チーズ20g
+
+ハム or 鶏むね肉30g
+
+オリーブオイル少量
+
+タンパク質：約25g
+
+プロテインパンケーキ
+プロテインパウダー 1スクープ
+
+オートミール30g
+
+卵1個
+
+無糖アーモンドミルク50ml
+
+タンパク質：約30g
+
+
+
+昼食
+
+
+鶏むね肉のグリル＆玄米
+鶏むね肉100g（塩・胡椒・オリーブオイルで焼く）
+
+玄米150g
+
+ブロッコリー＆にんじん（蒸し野菜）
+
+タンパク質：約40g
+
+豆腐ハンバーグ＆味噌汁
+鶏ひき肉100g＋木綿豆腐50g
+
+味噌汁（ワカメ・豆腐入り）
+
+雑穀米100g
+
+タンパク質：約35g
+
+サーモンアボカド丼
+刺身用サーモン100g
+
+アボカド1/2個
+
+雑穀米100g
+
+醤油・ワサビ適量
+
+タンパク質：約35g
+
+
+
+夕食
+
+
+鯖の塩焼き＆納豆
+鯖の切り身1切れ（焼く）
+
+納豆1パック
+
+ほうれん草のおひたし
+
+味噌汁（豆腐・ワカメ入り）
+
+タンパク質：約45g
+
+ステーキ＆温野菜
+牛赤身肉150g
+
+ブロッコリー＆カリフラワー（蒸す）
+
+タンパク質：約50g
+
+チキンカレー（高タンパクver.）
+鶏むね肉100g
+
+玉ねぎ・トマト・ほうれん草
+
+カレー粉＋ヨーグルトでヘルシー仕上げ
+
+玄米100g
+
+タンパク質：約40g
+
+
+
+間食・おやつ
+
+
+プロテインシェイク
+*   プロテインパウダー 1スクープ
+*   無糖アーモンドミルク200ml
+*   タンパク質：約25g
+
+ゆで卵＆チーズ
+*   ゆで卵2個
+*   ナチュラルチーズ1個
+*   タンパク質：約20g
+
+ツナときゅうりの和え物
+*   ツナ（水煮）1缶
+*   きゅうり1/2本
+*   醤油・ごま油少々
+*   タンパク質：約25g
+
+
+
+好みや食材の調達しやすさに応じて調整できます！ 何か特定の目的があれば、それに合わせた提案もできますよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">タンパク質が多いだけでなく、糖質、脂質をなるべく抑えたいのです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">タンパク質をしっかり摂りつつ、糖質と脂質をできるだけ抑えたメ
+…
+定の食材を使いたい場合は教えてください！</div>
+          <div class="full">タンパク質をしっかり摂りつつ、糖質と脂質をできるだけ抑えたメニューを考えました。高タンパク・低糖質・低脂質を意識したメニューなので、ダイエットやボディメイクにも適しています。
+
+
+
+朝食（低脂質・低糖質・高タンパク）
+
+
+白身オムレツ（ほうれん草＆鶏むね肉入り）
+卵白3個分
+
+鶏むね肉（茹で or グリル）50g
+
+ほうれん草（湯通し）
+
+塩・胡椒（オリーブオイルなし）
+
+P: 約30g / C: 2g / F: 2g
+
+豆腐とツナの和え物
+木綿豆腐150g（水切り）
+
+ツナ（水煮・ノンオイル）1缶
+
+醤油少々
+
+P: 約35g / C: 5g / F: 4g
+
+プロテインヨーグルト
+無糖ギリシャヨーグルト150g
+
+プロテインパウダー（プレーン）1スクープ
+
+P: 約40g / C: 8g / F: 3g
+
+
+
+昼食（ボリューム重視・低脂質）
+
+
+鶏むね肉のグリル＆ブロッコリー
+鶏むね肉150g（茹で or 焼く）
+
+ブロッコリー（塩ゆで）
+
+ノンオイルドレッシング
+
+P: 約50g / C: 6g / F: 3g
+
+白身魚の塩焼き＆キャベツ
+タラ or スズキ100g（塩焼き）
+
+千切りキャベツ（ドレッシングなし）
+
+低脂質味噌汁（ワカメ・豆腐）
+
+P: 約35g / C: 10g / F: 2g
+
+鶏ささみと海藻のサラダ
+鶏ささみ100g（蒸し）
+
+ワカメ・もずく
+
+大根おろし＆ポン酢
+
+P: 約40g / C: 5g / F: 1g
+
+
+
+夕食（腹持ちをよくしつつ低脂質）
+
+
+サーモンと豆腐の蒸し料理
+サーモン100g（蒸す）
+
+木綿豆腐100g
+
+しょうが醤油
+
+P: 約45g / C: 5g / F: 7g
+
+鶏むね肉の出汁煮
+鶏むね肉150g
+
+昆布＆鰹出汁で煮る
+
+しめじ＆白菜
+
+P: 約50g / C: 7g / F: 3g
+
+エビと卵白の炒め物
+むきエビ100g
+
+卵白2個
+
+しょうが・塩・胡椒
+
+P: 約40g / C: 2g / F: 3g
+
+
+
+間食（低糖質・低脂質の軽食）
+
+
+プロテインシェイク（水割り）
+*   プロテインパウダー1スクープ
+*   水 or 無糖アーモンドミルク
+*   P: 約25g / C: 3g / F: 1g
+
+ゆで卵（白身のみ）
+*   卵白2個分
+*   塩少々
+*   P: 約15g / C: 0g / F: 0g
+
+鶏ささみのスティック
+*   鶏ささみ50g（茹でて塩）
+*   P: 約15g / C: 0g / F: 0g
+
+無脂肪カッテージチーズ
+*   カッテージチーズ100g
+*   P: 約25g / C: 5g / F: 2g
+
+
+
+このようなメニューなら、糖質・脂質をしっかり抑えつつ高タンパクをキープできます。調理方法は**蒸す・茹でる・焼く（オイルなし）**を基本にするのがおすすめです。
+
+
+何かアレンジしたい場合や、特定の食材を使いたい場合は教えてください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: high_
+…
+ット, ボディメイク, ヘルシーメニュー</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: high_protein_low_carb_menu
+サマリー:
+本対話では、タンパク質を多く摂取しつつ、糖質と脂質をできるだけ抑えた食事メニューについて検討した。朝食、昼食、夕食、間食に分けて、それぞれ具体的な食材や調理法を提示。特に鶏むね肉、卵白、ギリシャヨーグルト、豆腐、白身魚などを中心に、高タンパク・低糖質・低脂質を意識した献立を構成している。調理法は茹で・蒸し・ノンオイル焼きを基本とし、目的別の食事管理に有用な内容となっている。
+タグ: 高タンパク, 低糖質, 低脂質, 食事管理, ダイエット, ボディメイク, ヘルシーメニュー</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

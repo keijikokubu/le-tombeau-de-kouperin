@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>dokushokai_kesseki_reason</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">dokushokai_kesseki_reason</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/02/07</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">読書会不参加の理由を何か考えてくれませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">読書会不参加の理由を考える際、「個人的な事情」・「心理的な要
+…
+れに応じてもっと適した理由を考えますよ。</div>
+          <div class="full">読書会不参加の理由を考える際、「個人的な事情」・「心理的な要因」・**「戦略的な意図」**など、いくつかの視点から考えられます。
+
+
+1. 個人的な事情（現実的な理由）
+
+
+仕事や予定が入った（急な会議、クライアント対応、家族の用事など）
+
+体調不良（頭痛、風邪気味、睡眠不足など）
+
+交通手段の問題（電車遅延、悪天候、移動が難しい）
+
+別の優先事項（他の趣味、勉強、執筆などに集中したい）
+
+家の事情（子どもの世話、家庭のトラブル）
+
+
+2. 心理的な要因（気持ち・メンタル面）
+
+
+気が乗らない（気分が乗らず、人と会いたくない）
+
+気疲れしている（人と会話するエネルギーが湧かない）
+
+読書会の本に興味がない（選書が自分の好みに合わない）
+
+話すことがないと感じる（自分の意見を話す自信がない、未読のまま）
+
+過去のやり取りが気になる（前回の読書会での発言を気にしてしまう）
+
+
+3. 戦略的な意図（意図的な不参加）
+
+
+グループの雰囲気を見極めるため（しばらく距離を置きたい）
+
+自分の価値を高めるため（常に参加するのではなく、たまに欠席することで希少性を上げる）
+
+特定の人を避けたい（苦手な参加者がいる）
+
+本当に興味のある本のときだけ参加したい（メリハリをつける）
+
+「忙しい人」感を出す（多忙なイメージを作りたい）
+
+
+もし具体的な状況があれば、それに応じてもっと適した理由を考えますよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">本当の理由は本に興味がないことと、気分が乗らない、別のことに時間をとっておきたい、なのですが、それをそのまま相手に伝えるのも気が引けます。
+何か、いい伝え方はないでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">率直に伝えるのが難しい場合、やわらかく自然な理由に言い換える
+…
+、しっくりくる表現を選んでみてください！</div>
+          <div class="full">率直に伝えるのが難しい場合、やわらかく自然な理由に言い換えるとよいですね。以下、いくつかの伝え方を提案します。
+
+
+1. 忙しさを理由にする（無難で角が立たない）
+
+
+「最近ちょっと立て込んでいて、今回は見送ろうと思います。またタイミングが合えば参加したいです！」
+
+
+→ 「忙しい」という理由は相手も納得しやすく、深掘りされにくい ので便利です。
+
+
+
+2. 体調やコンディションを理由にする（やんわり断る）
+
+
+「ちょっと疲れがたまっていて、今回はゆっくり過ごすことにしました。また次回、機会があればよろしくお願いします！」
+
+
+→ 「疲れている」や「コンディション優先」は理解されやすく、共感を得やすい表現 です。
+
+
+
+3. 「今回は見送る」という表現を使う（含みを持たせる）
+
+
+「今回はちょっと見送りますが、また次の機会があれば参加したいと思います！」
+
+
+→ 断る理由を具体的に言わず、次回以降の可能性を残すことで、相手に余計な詮索をさせない 方法です。
+
+
+
+4. 本のテーマや気分に触れて、やんわり断る
+
+
+「今回の本、ちょっと今の気分と合わなかったので、今回はパスします。また次の本が決まったら教えてください！」
+
+
+→ 「今の気分に合わない」というのは本音に近いけど、嫌な印象を与えにくい理由 です。
+
+
+
+5. 他にやりたいことがあることを伝える（ポジティブな言い方）
+
+
+「ちょうど今、別のことに集中したいタイミングなので、今回は遠慮しておきます。でもまた次回、ご一緒できるのを楽しみにしています！」
+
+
+→ 「別のことに集中したい」と伝えつつ、相手を否定せずにフォローを入れる 表現です。
+
+
+
+この中で、「忙しさを理由にする」か、「今回は見送る」あたりが、角が立ちにくく、余計な詮索を避けられる のでおすすめです。
+
+
+相手の関係性や雰囲気に合わせて、しっくりくる表現を選んでみてください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: dokus
+…
+気乗りしない, 丁寧な表現, 心理的配慮</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: dokushokai_kesseki_reason
+サマリー:
+読書会を欠席する際の理由について相談。実際には「本に興味がない」「気分が乗らない」「別のことに時間を使いたい」という正直な動機があるが、それをそのまま伝えるのは気が引けるため、相手に角が立たない自然な断り方を模索。体調や忙しさを理由にする表現、次回への含みを持たせる言い回しなど、複数の婉曲的な伝達方法を提案した。
+タグ: 読書会, 欠席理由, 断り方, 人間関係, 気乗りしない, 丁寧な表現, 心理的配慮</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

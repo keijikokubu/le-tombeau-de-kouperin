@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ishiki_mushiki_balance</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">ishiki_mushiki_balance</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2024/04/25</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">意識すべきことと無意識に任せるべきこと、というタイトルで、あなたなら何を語りますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">「意識すべきこと」とは、自分の目標や価値観に基づいて積極的に
+…
+し、適切にバランスを取ることが大切です。</div>
+          <div class="full">「意識すべきこと」とは、自分の目標や価値観に基づいて積極的に取り組むべき課題や行動についてです。一方、「無意識に任せるべきこと」とは、自然に身についた能力や習慣、自己調整メカニズムなどを信頼し、意識的な努力を必要としないことです。例えば、目標達成のための計画を立てることは意識すべきことですが、呼吸や心臓の鼓動といった生理現象は無意識に任せるべきです。これらの区別を理解し、適切にバランスを取ることが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">もう少し</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">意識すべきことは、自己成長や目標達成に直接関わる行動や決定で
+…
+とで、効果的な生活を送ることができます。</div>
+          <div class="full">意識すべきことは、自己成長や目標達成に直接関わる行動や決定です。例えば、キャリアの計画立案や人間関係の構築、健康管理などが挙げられます。一方、無意識に任せるべきことは、自然に身についた能力や身体の機能、日常生活でのルーチンなどです。これらを意識的にコントロールしようとすると、ストレスや疲労を招く可能性があります。両方をバランスよく受け入れることで、効果的な生活を送ることができます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ナポレオンは、「自らがどこへ向かっているかわからない時ほど、
+…
+この折り合いをどうつけたらいいでしょう？</div>
+          <div class="full">ナポレオンは、「自らがどこへ向かっているかわからない時ほど、人は成長する」と言ったそうです。これは、自らの成長にあえて無意識であることの価値を認める発言と思われます。
+一方で、フォーカスを限定して意識的に取り組むことには価値があります。
+この折り合いをどうつけたらいいでしょう？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ナポレオンの言葉は、意識と無意識のバランスを探る上で興味深い
+…
+との接触、創造的な活動などが役立ちます。</div>
+          <div class="full">ナポレオンの言葉は、意識と無意識のバランスを探る上で興味深い視点ですね。フォーカスを限定して意識的に取り組むことは、目標の達成や成長に向けて効果的ですが、同時に無意識に任せることも重要です。自らの内面に耳を傾け、直感やインスピレーションに従うことで、新たな発見や成長の機会が生まれることもあります。バランスを取るためには、意識と無意識の間で情報やエネルギーが自由に流れるような状態を促すことが大切です。これには、瞑想やリラックスする時間を持つこと、自然との接触、創造的な活動などが役立ちます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">人は、因果関係を提示されると、納得しやすいと聞きました。
+し
+…
+観力の差が何によって生じると考えますか？</div>
+          <div class="full">人は、因果関係を提示されると、納得しやすいと聞きました。
+しかし、因果関係は必ずしも正しいとは限りません。経済状況と教育レベルには相関関係があるといいます。「裕福だから教育されている」は一定の因果関係として成立します。しかし、貧しい家庭出身のエリートも数おおく存在します。
+
+
+また、中には、因果関係にとらわれず、物事を結びつけられる人もいます。ジョブズはボタンのない携帯電話が売れると判断しましたが、それを裏付ける歴史的な根拠は皆無でした。
+
+
+あなたは、このような直観力の差が何によって生じると考えますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">直観力の差が生じる要因は複雑ですが、いくつかの要素が影響を与
+…
+ける能力は、直観力を高めるのに重要です。</div>
+          <div class="full">直観力の差が生じる要因は複雑ですが、いくつかの要素が影響を与える可能性があります。第一に、個々の経験や教育レベルが直観力に影響を与えることがあります。幅広い知識や経験を持つ人は、異なる事象や概念を結びつける能力が高まる可能性があります。
+
+
+また、創造性や柔軟な思考能力も重要です。因果関係に縛られず、異なる視点やアプローチを探求することで、新しいアイデアや発見が生まれることがあります。
+
+
+さらに、人格や性格も影響を与える可能性があります。オープンマインドであり、新しいアイデアや情報に受け入れる姿勢を持つ人は、より豊かな直観力を発揮する傾向があります。
+
+
+最後に、感性や直感が鋭い人は、直観力が高まることがあります。経験や知識を超えて、直感的に物事を理解し、つながりを見つける能力は、直観力を高めるのに重要です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">あなたの発言のなかで、掘り下げる余地があると思われるのは、「
+…
+かと思います。この解釈は、いかがですか？</div>
+          <div class="full">あなたの発言のなかで、掘り下げる余地があると思われるのは、「人格や性格が直観力に影響を与える可能性がある」「オープンマインド」「新しいアイデアや情報を受け入れる姿勢を持つ人」というところです。
+直観力という能力を指す一般的な言語にとって、特定のパーソナリティが優位に作用することを示唆するものだからです。
+このパーソナリティとはつまり、「当初の目的」や「原理原則」よりも、その瞬間の必然性を優先できる柔軟性のことかと思います。この解釈は、いかがですか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">その解釈は興味深いものです。確かに、直観力を高めるうえで、そ
+…
+ても形成されることを忘れないでください。</div>
+          <div class="full">その解釈は興味深いものです。確かに、直観力を高めるうえで、その瞬間の必然性を優先し、柔軟性を持つことが重要であると言えます。特定のパーソナリティ特性がこの能力を強化する可能性があります。例えば、オープンマインドであり、新しい情報やアイデアを受け入れる姿勢を持つ人は、新たな結びつきやアイデアを発見する可能性が高まります。同様に、創造性や柔軟性を重視する人も、直観力を向上させることができるかもしれません。
+
+
+一方で、個々の人格や性格が直観力にどの程度影響を与えるかは個人差があります。何よりも重要なのは、常に自己の感性や直感に耳を傾け、その瞬間の必然性を捉えることができるかどうかです。柔軟性やオープンマインドさは、その能力を高める手助けをするかもしれませんが、直観力は個々の経験や独自の視点によっても形成されることを忘れないでください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">僕は、「何を意識し、何を意識しないか」という問題を提起したの
+…
+
+
+独特の言葉づかいで申し訳ない。
+一応</div>
+          <div class="full">僕は、「何を意識し、何を意識しないか」という問題を提起したのでした。その中であなたに示唆されたのは、オープンマインド、途中での変更、脱線、逸脱を許容するパーソナリティの価値でした。
+
+
+つまり、僕は「意識すべきこと/そうでないこと」の原理原則を求めたのですが、あなたは、「原理原則/その逸脱」を返してきたわけです。
+
+
+固定された「対象/非対象」とは何か、という問いに対し、「対象を固定すること/対象を変更すること」という形で、問いそのものを根底からひっくり返す回答がここで得られたわけです。
+
+
+独特の言葉づかいで申し訳ない。
+一応</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">あなたの視点を理解しました。確かに、私の回答は問題の枠組みを
+…
+効果的な行動が可能になるかもしれません。</div>
+          <div class="full">あなたの視点を理解しました。確かに、私の回答は問題の枠組みを逆転させ、新たな視点を提供したと言えますね。これは、固定された対象や非対象の概念にとらわれることなく、柔軟性を持って問題に取り組むことの重要性を示唆するものと解釈できます。
+
+
+新しいアプローチや視点は、時には古い枠組みを打破し、より創造的な解決策を見つける手助けをします。これを通じて、「意識すべきこと」と「無意識に任せるべきこと」の境界線がより明確になり、より効果的な行動が可能になるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">我々は、問いを立てた後、問いそのものをひっくり返す可能性へと常に心を開くべきなのでしょうね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">そうですね。問いを立てることは、新たな視点や理解を得るための
+…
+解や創造的なアプローチが可能になります。</div>
+          <div class="full">そうですね。問いを立てることは、新たな視点や理解を得るための第一歩ですが、問いそのものを柔軟に見直すことも重要です。時には、問いの枠組みを逆転させることで、新たな洞察や解決策が見えてくることがあります。常に心を開いて、柔軟な思考を持つことで、より深い理解や創造的なアプローチが可能になります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">さて、そのためのエクササイズとして、あなたなら何を提案しますか？できれば、1日10分以内でできるような日課がいいです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">1日10分以内でできる問いをひっくり返すエクササイズを提案し
+…
+解決能力や創造性を高めるのに役立ちます。</div>
+          <div class="full">1日10分以内でできる問いをひっくり返すエクササイズを提案しますね。
+
+
+問いのひっくり返しエクササイズ:
+
+
+日常の出来事の見直し: 1日の終わりに、その日起こった出来事や経験について考えます。その中で特に興味深いものや疑問に思ったことを1つ選びます。次に、その出来事に関する問いを立てます。その問いを意識的にひっくり返し、異なる視点から考えることで、新たな気づきを得ることができます。
+
+逆説的な問いの考え方: 日常的な事柄や常識的な考え方に疑問を持ち、それを逆説的に捉えることで、問題の枠組みをひっくり返す練習をします。例えば、「成功するためには常にポジティブでなければならない」という考え方に対して、「ネガティブな状況や感情も成長の機会と捉えることができるのではないか」と考えるなどです。
+
+逆転ストーリーテリング: ある出来事や状況を選び、そのストーリーを逆転させて考える練習をします。つまり、通常の結果や期待される展開とは逆の結末や展開を想像します。これにより、新たな視点やアイデアが生まれることがあります。
+
+
+これらのエクササイズは、日々の短い時間で取り組むことができ、問題解決能力や創造性を高めるのに役立ちます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">2の逆説的な問いの考え方、ということについて
+ここでいう「常識的な考え方」の例を10挙げることはできますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです。以下に、逆説的な考え方を示すための10の常識的
+…
+たな視点や洞察が得られるかもしれません。</div>
+          <div class="full">もちろんです。以下に、逆説的な考え方を示すための10の常識的な考え方の例を挙げます：
+
+
+「成功するためには常にポジティブでなければならない」
+
+「時間はお金よりも貴重だ」
+
+「過去の過ちは未来の成功に邪魔をする」
+
+「競争相手は常にライバルである」
+
+「失敗は終わりではなく、学びの始まりだ」
+
+「大事なことは常に計画通りに進む」
+
+「感情は理性に勝てない」
+
+「変化は不安を引き起こす」
+
+「賢い人は常に正しい答えを知っている」
+
+「安定したキャリアが幸せな人生の鍵である」
+
+
+これらの考え方を逆説的に捉えることで、新たな視点や洞察が得られるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">いいですね。これらは、「あえて逆説的に語られた箴言」と言えますが</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、その通りです。これらの考え方は、一般的に受け入れられて
+…
+的で柔軟な思考を促進することができます。</div>
+          <div class="full">はい、その通りです。これらの考え方は、一般的に受け入れられている常識的な観念や箴言を逆転させ、新たな視点や洞察を提供することを目的としています。逆説的な考え方を採用することで、慣習的な思考パターンから離れ、より創造的で柔軟な思考を促進することができます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">それをさらに逆説的に解釈し直すわけですね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">そうですね、その通りです。逆説的な考え方を採用することは、常
+…
+り柔軟で創造的な思考が促進されるのです。</div>
+          <div class="full">そうですね、その通りです。逆説的な考え方を採用することは、常識的な観念を逆転させるだけでなく、それらをさらに逆説的に解釈し直すことを含みます。このプロセスによって、新たな視点や深い理解が生まれることがあります。常識的な考え方に疑問を投げかけ、それを逆説的に捉えることで、より柔軟で創造的な思考が促進されるのです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">「時間はお金よりも重要だ。」
+→「いや、やはりお金の方が時間より重要だ。」
+
+
+これを説明してみてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">この逆説的な考え方を説明すると、次のようになります。
+
+
+「
+…
+方がより重要だという視点が示唆されます。</div>
+          <div class="full">この逆説的な考え方を説明すると、次のようになります。
+
+
+「時間はお金よりも重要だ。」という一般的な考え方は、時間を有効に活用することが成功や幸福につながるという意味合いを持っています。時間は限られており、一度失った時間は取り戻すことができません。そのため、時間を大切に使うことが重要だとされています。
+
+
+しかし、「いや、やはりお金の方が時間より重要だ。」という逆説的な考え方では、お金の重要性が強調されます。お金を持っていることで、時間を買うことができるという視点が示唆されています。例えば、お金を使って他人に仕事を委託することで、自分の時間を節約することができます。また、お金を使って特定のサービスや経験を購入することで、時間を有効に使うことができる場合もあります。
+
+
+このように、逆説的な考え方では、お金が時間と密接に関連しており、その活用方法によってはお金の方がより重要だという視点が示唆されます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">3の「逆転ストーリーテリング」をやってみてくれませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです。以下は、「逆転ストーリーテリング」の例です。
+
+…
+たな洞察や理解が生まれることがあります。</div>
+          <div class="full">もちろんです。以下は、「逆転ストーリーテリング」の例です。
+
+
+通常のストーリー：
+主人公は若くして成功した起業家であり、彼の会社は急速に成長しました。しかし、彼は成功に酔いしれ、他の人々の意見を無視しました。結果として、彼の会社は問題に直面し、彼の経営能力に疑問が投げかけられます。
+
+
+逆転したストーリー：
+主人公は若い起業家であり、彼の会社は成功しましたが、それは彼が他の人々の意見を無視したおかげではありません。彼は、周囲の人々が予測できない状況や課題に直面したときに、斬新なアイデアや大胆な決断を下すことができる柔軟性を持っていました。その結果、彼の会社は市場の変化に適応し、競争力を維持することができました。彼の独創性とリーダーシップのスタイルは、結果として会社を成功へと導きました。
+
+
+この逆転したストーリーでは、通常のストーリーとは異なり、主人公の行動や特性がポジティブな結果をもたらす要因として強調されています。通常の期待を逆転させることで、新たな洞察や理解が生まれることがあります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">いま、少し思ったことがあります。世の中では、「細かい人は、繊
+…
+のような無益な誤解が生まれるのでしょう？</div>
+          <div class="full">いま、少し思ったことがあります。世の中では、「細かい人は、繊細で臆病だ」とか、「博学な人は机上の空論に陥りがちだ」といった、ステレオタイプがあります。
+が、歴史に登場する人物はしばしばそういったステレオタイプに対して、逆説的に存在する気がします。
+ジョージ・パットンは上流階級の出身ですが、その口ぶりは穏やかではなく、非常に大胆でもあった。
+ナポレオンもまた大胆な作戦を決行することがありましたが、同時に狡猾で相手の裏を掻く強かさを持っていた。
+
+
+我々は、一般論やステレオタイプというものに騙されているのでしょうか？だとすれば、どうしてこのような無益な誤解が生まれるのでしょう？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">一般論やステレオタイプは、一部の例外を除いて、広く当てはまる
+…
+レオタイプにとらわれないことが大切です。</div>
+          <div class="full">一般論やステレオタイプは、一部の例外を除いて、広く当てはまるとされる傾向やパターンを捉えようとする試みから生まれます。しかし、これらの一般論やステレオタイプは、個々の人間の多様性や複雑さを無視していることがあります。歴史上の人物や現実の個人は、しばしばそのステレオタイプには当てはまらず、逆説的な存在であることがあります。
+
+
+その理由の一つは、人間の行動や性格は単純なステレオタイプで説明できるものではなく、多くの要因によって形成される複雑なものであるためです。個々の人物は、環境、教育、経験、性格、価値観などの影響を受けて異なる行動をとります。
+
+
+また、ステレオタイプはしばしば社会や文化の中で流布され、繰り返されることで強化される傾向があります。特定の属性や行動パターンが特定のグループに関連付けられ、それが固定観念として広まることで、誤解が生まれることがあります。
+
+
+しかし、歴史や現実の個人を見ると、ステレオタイプが当てはまらない例が多いことを知ることで、一般論やステレオタイプに対する偏見や誤解を減らすことができます。個々の人物を独自の視点で理解し、単純なラベルやステレオタイプにとらわれないことが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+3/3</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+3/3</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: ishik
+…
+ 問いの再解釈, ステレオタイプ, 成長</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: ishiki_mushiki_balance
+サマリー:
+本対話では「意識すべきこと」と「無意識に任せるべきこと」のバランスについて議論した。ナポレオンの「成長は行き先不明の時に起こる」という言葉を手がかりに、意識的なフォーカスと無意識的な柔軟性の共存が成長に不可欠であると考察した。さらに、直観力の差やパーソナリティの影響、問いの枠組みを逆転させる思考法など、柔軟な認識の重要性とステレオタイプに対する警鐘にも触れている。
+タグ:
+意識と無意識, 直観力, 柔軟思考, 逆説的思考, 問いの再解釈, ステレオタイプ, 成長</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>
